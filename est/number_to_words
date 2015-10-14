@@ -2,21 +2,22 @@
 
 import sys
 
-WORDS = {-1: 'nålla',
+WORDS = {-1: 'null',
          0: '',
-         1: 'okta',
-         2: 'guokte',
-         3: 'golbma',
-         4: 'njeallje',
-         5: 'vihtta',
-         6: 'guhhta',
-         7: 'čieža',
-         8: 'gávcci',
-         9: 'ovcci',
-         10: 'logi',
-         -10: 'nuppelohkái',
-         100: 'čuođi',
-         1000: 'duhát',
+         1: 'üks',
+         2: 'kaks',
+         3: 'kolm',
+         4: 'neli',
+         5: 'viis',
+         6: 'kuus',
+         7: 'seitse',
+         8: 'kaheksa',
+         9: 'üheksa',
+         10: 'kümme',
+         -10: 'teist',
+         -11: 'kümmend',
+         100: 'sada',
+         1000: 'tuhat',
          }
 
 
@@ -26,7 +27,7 @@ def get_number_below_hundred(number):
         return WORDS[number]
     if 11 <= number < 20:
         return WORDS[number % 10] + WORDS[-10]
-    return WORDS[number // 10] + WORDS[10] + WORDS[number % 10]
+    return WORDS[number // 10] + WORDS[-11] + WORDS[number % 10]
 
 
 def get_number_below_thousand(number):
